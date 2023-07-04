@@ -2,7 +2,7 @@ from cryptography import x509
 import datetime
 from Generator.PrivateKeyGenerator import generatePrivateKey
 from cryptography.hazmat.primitives import hashes
-from SaveProvateKeyAndCertificate import savePrivateKeyAndCertificate
+from Generator.SavePrivateKeyAndCertificate import savePrivateKeyAndCertificate
 
 
 def generateCertificate(certificateSubject):
