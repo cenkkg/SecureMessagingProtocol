@@ -1,5 +1,6 @@
 from Generator.CertificateGenerator import generateCertificate
 from Generator.NamingGenerator import generateNameOfOrganisation
+from Generator.SaveOrganisationToSystem import saveOrganisationToSystem
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -8,11 +9,13 @@ app = Flask(__name__)
 def joinServer():
     try:
         # Get credentials of client
-        client_ip = request.remote_addr
-        client_port = request.environ.get('REMOTE_PORT')
+        client_ip   = str(request.remote_addr)
+        client_port = str(request.environ.get('REMOTE_PORT'))
 
         # Generate Certificate - Save it
-        generateCertificate(generateNameOfOrganisation(client_ip + ":" + client_port))
+        organisationID = generateNameOfOrganisation(client_ip + ":" + client_port)
+        saveOrganisationToSystem(organisationID)
+
 
     except Exception:
         # TODO --- LOGGING

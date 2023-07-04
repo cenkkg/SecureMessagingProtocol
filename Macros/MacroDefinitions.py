@@ -1,2 +1,6 @@
 blobStorageConnectionString = "<your_connection_string>"
 blobStorageConnectionName   = "<your_container_name>"
+databaseHostAddress         = "<your_db_address>"
+databaseName                = "<your_db_name>"
+databaseUser                = "<your_db_user>"
+databasePassword            = "<your_db_password>"
